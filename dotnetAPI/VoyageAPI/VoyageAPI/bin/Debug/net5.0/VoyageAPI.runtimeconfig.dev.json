@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\Riality\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\Riality\\.nuget\\packages"
+    ]
+  }
+}
