@@ -1,0 +1,26 @@
+.navbar {
+  margin: 0px;
+  padding: 10px;
+
+  background-color: rgb(241, 222, 136);
+}
+
+.logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.boxButtons {
+  width: 100px;
+}
+
+.imglogo {
+  height: 55px;
+  margin-left: 20px;
+  border-radius: 10%;
+}
+
+.imglogo:hover {
+  cursor: pointer;
+}
