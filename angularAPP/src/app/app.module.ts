@@ -8,6 +8,8 @@ import { CardComponent } from './card/card.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AccueilComponent } from './accueil/accueil.component';
 import { RouterModule } from '@angular/router';
+import { SigninComponent } from './signin/signin.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,6 +17,7 @@ import { RouterModule } from '@angular/router';
     NavbarComponent,
     CardComponent,
     AccueilComponent,
+    SigninComponent,
   ],
   imports: [
     BrowserModule,
@@ -23,7 +26,9 @@ import { RouterModule } from '@angular/router';
     RouterModule.forRoot([
       { path: '', redirectTo: '/accueil', pathMatch: 'full' },
       { path: 'accueil', component: AccueilComponent },
+      { path: 'signin', component: SigninComponent },
     ]),
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

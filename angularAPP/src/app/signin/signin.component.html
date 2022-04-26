@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="signInBox">
+    <div class="signin p-2">
+      <h4>Login</h4>
+
+      <form (submit)="onSubmitUsername(); onSubmitPassword(); signInRequest()">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Email address</label>
+          <input
+            [(ngModel)]="username"
+            name="username"
+            class="form-control"
+            placeholder="Enter email"
+          />
+        </div>
+        <div class="form-group mt-2">
+          <label for="exampleInputPassword1">Password</label>
+          <input
+            [(ngModel)]="password"
+            name="password"
+            class="form-control"
+            placeholder="Password"
+          />
+        </div>
+        <p *ngIf="errMsg.length" class="text-danger">{{ errMsg }}</p>
+        <button type="submit" class="btn btn-primary mt-2">Sign in</button>
+      </form>
+    </div>
+  </div>
+</div>

@@ -41,10 +41,7 @@ namespace VoyageAPI.Controllers
         [HttpPost("register")]
         public async Task<IActionResult> Register([FromBody] UserRegisterRequest userRequest)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest("Invalid Model State");
-            }
+          
 
             var user = new User
             {
@@ -82,7 +79,7 @@ namespace VoyageAPI.Controllers
                 return BadRequest("Invalid Model State");
             }
 
-            var user = await _userManager.FindByNameAsync(userSignInRequest.UserName);
+                    var user = await _userManager.FindByNameAsync(userSignInRequest.UserName);
             if (user == null)
             {
                 return BadRequest("Bad credentials");

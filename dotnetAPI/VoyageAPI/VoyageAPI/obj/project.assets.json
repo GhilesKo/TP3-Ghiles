@@ -9476,11 +9476,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Riality\\Documents\\VoyageAPI\\VoyageAPI\\VoyageAPI.csproj",
+      "projectUniqueName": "C:\\Users\\Riality\\Desktop\\TP3-Ghiles\\dotnetAPI\\VoyageAPI\\VoyageAPI\\VoyageAPI.csproj",
       "projectName": "VoyageAPI",
-      "projectPath": "C:\\Users\\Riality\\Documents\\VoyageAPI\\VoyageAPI\\VoyageAPI.csproj",
+      "projectPath": "C:\\Users\\Riality\\Desktop\\TP3-Ghiles\\dotnetAPI\\VoyageAPI\\VoyageAPI\\VoyageAPI.csproj",
       "packagesPath": "C:\\Users\\Riality\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Riality\\Documents\\VoyageAPI\\VoyageAPI\\obj\\",
+      "outputPath": "C:\\Users\\Riality\\Desktop\\TP3-Ghiles\\dotnetAPI\\VoyageAPI\\VoyageAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Riality\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -1,7 +1,7 @@
 <div class="background">
   <div class="navbar">
     <div class="logo">
-      <a>
+      <a [routerLink]="['']">
         <img
           src="https://cdn.pixabay.com/photo/2019/10/14/07/53/travel-4548127_960_720.png"
           class="imglogo"
@@ -12,12 +12,15 @@
 
     <form class="fullBox">
       <div class="boxLogin">
-        <button
-          type="button"
-          class="btn btn-sm btn-primary boxButtons signup mb-1 mx-3"
+        <a [routerLink]="['/signin']">
+          <button
+            type="button"
+            class="btn btn-sm btn-primary boxButtons signup mb-1 mx-3"
+          >
+            <p *ngIf="isSuccesful === false">Login</p>
+            <p *ngIf="isSuccesful === true">Logout</p>
+          </button></a
         >
-          Login
-        </button>
       </div>
     </form>
   </div>
