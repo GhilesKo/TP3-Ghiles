@@ -13,13 +13,11 @@ export class AccueilComponent implements OnInit {
   constructor(public service: VoyageRequestService) {}
 
   ngOnInit(): void {
-    this.service.getVoyagePublic().subscribe((res) => {
+    this.service.getPublicVoyages().subscribe((res) => {
       res.forEach((v: any) => {
         var newVoyage = new Voyage(v.pays, v.photo);
         this.voyagesPublic.push(newVoyage);
       });
-
-      console.log(this.voyagesPublic);
     });
   }
 }

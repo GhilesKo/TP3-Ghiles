@@ -10,18 +10,33 @@
       <h4 class="site">J'mepromèneavecmesvalises.com</h4>
     </div>
 
-    <form class="fullBox">
-      <div class="boxLogin">
-        <a [routerLink]="['/signin']">
-          <button
-            type="button"
-            class="btn btn-sm btn-primary boxButtons signup mb-1 mx-3"
-          >
-            <p *ngIf="isSuccesful === false">Login</p>
-            <p *ngIf="isSuccesful === true">Logout</p>
-          </button></a
+    <div class="boxLogin">
+      <a *ngIf="!service.tokenstored" [routerLink]="['/signin']">
+        <button
+          type="button"
+          class="btn btn-sm btn-primary boxButtons signup mb-1 mx-3"
         >
-      </div>
-    </form>
+          Login
+        </button>
+      </a>
+      <a *ngIf="service.tokenstored" [routerLink]="['/myVoyages']">
+        <button
+          type="button"
+          class="btn btn-sm btn-success boxButtons btnvoyage signup mb-1"
+        >
+          <i class="fa-solid fa-suitcase"></i>
+          Mes voyages
+        </button>
+      </a>
+      <a *ngIf="service.tokenstored" [routerLink]="['']">
+        <button
+          (click)="Logout()"
+          type="button"
+          class="btn btn-sm btn-primary boxButtons signup mb-1 mx-3"
+        >
+          Logout
+        </button>
+      </a>
+    </div>
   </div>
 </div>

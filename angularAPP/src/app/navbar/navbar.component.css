@@ -24,3 +24,7 @@
 .imglogo:hover {
   cursor: pointer;
 }
+
+.btnvoyage {
+  width: 150px;
+}

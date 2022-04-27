@@ -3,7 +3,7 @@
     <div class="signin p-2">
       <h4>Login</h4>
 
-      <form (submit)="onSubmitUsername(); onSubmitPassword(); signInRequest()">
+      <form (submit)="signInRequest()">
         <div class="form-group">
           <label for="exampleInputEmail1">Email address</label>
           <input
@@ -22,7 +22,7 @@
             placeholder="Password"
           />
         </div>
-        <p *ngIf="errMsg.length" class="text-danger">{{ errMsg }}</p>
+
         <button type="submit" class="btn btn-primary mt-2">Sign in</button>
       </form>
     </div>

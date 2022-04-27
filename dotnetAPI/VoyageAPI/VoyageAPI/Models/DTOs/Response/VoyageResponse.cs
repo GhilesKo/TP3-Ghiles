@@ -12,7 +12,7 @@ namespace VoyageAPI.Models.DTOs.Response
         public int Id { get; set; }
         public string Pays { get; set; }
 
-        public List<UserDTO> Users { get; set; } = new List<UserDTO>();
+        public List<UserDTO > Users { get; set; } = new List<UserDTO>();
 
         public bool Public { get; set; }
 

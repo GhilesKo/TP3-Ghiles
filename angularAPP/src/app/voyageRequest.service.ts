@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
@@ -9,45 +9,41 @@ import { Voyage } from './Voyage';
   providedIn: 'root',
 })
 export class VoyageRequestService implements OnInit {
-  errMsg: string = '';
-  token?: string;
-  isSuccesful: boolean = false;
+  errMsg?: string;
 
-  constructor(public http: HttpClient, private route: Router) {}
-  ngOnInit(): void {
-    this.getVoyagePublic();
-  }
+  tokenstored = localStorage.getItem('token');
+
+  constructor(public http: HttpClient, public route: Router) {}
+
+  ngOnInit(): void {}
 
   voyagesPublic: Voyage[] = [];
+  voyagePrivate: Voyage[] = [];
 
-  getVoyagePublic() {
+  getPublicVoyages() {
     return this.http.get<any>('http://localhost:16029/api/Voyages/Public');
   }
 
-  signInRequest(username: string, password: string) {
-    this.http
+  getCustomVoyage() {
+    return this.http.get<any>('http://localhost:16029/api/Voyages/Custom');
+  }
+
+  async signInRequest(username: string, password: string) {
+    return await this.http
       .post<any>('http://localhost:16029/api/Account/signIn', {
         UserName: username,
         Password: password,
       })
-      .subscribe(
-        (res) => {
-          this.route.navigate(['']);
-          this.isSuccesful = true;
-          if (this.isSuccesful === true) {
-            console.log('success');
-          } else {
-            console.log('fail');
-          }
-          this.token = res.token;
-          console.log(this.token);
-          this.errMsg = '';
-        },
-        (err) => {
-          this.isSuccesful = false;
-          console.log(err.error);
-          this.errMsg = err.error;
-        }
-      );
+      .toPromise()
+      .then((res) => {
+        this.errMsg = undefined;
+        this.tokenstored = res.token;
+        localStorage.setItem('token', res.token);
+        this.route.navigate(['']);
+      })
+      .catch((err) => {
+        console.log(err.error);
+        this.errMsg = err.error;
+      });
   }
 }

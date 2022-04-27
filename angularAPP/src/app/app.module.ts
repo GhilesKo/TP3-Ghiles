@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -10,6 +10,7 @@ import { AccueilComponent } from './accueil/accueil.component';
 import { RouterModule } from '@angular/router';
 import { SigninComponent } from './signin/signin.component';
 import { FormsModule } from '@angular/forms';
+import { PrivateVoyagesComponent } from './privateVoyages/privateVoyages.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { FormsModule } from '@angular/forms';
     CardComponent,
     AccueilComponent,
     SigninComponent,
+    PrivateVoyagesComponent,
   ],
   imports: [
     BrowserModule,
@@ -27,6 +29,7 @@ import { FormsModule } from '@angular/forms';
       { path: '', redirectTo: '/accueil', pathMatch: 'full' },
       { path: 'accueil', component: AccueilComponent },
       { path: 'signin', component: SigninComponent },
+      { path: 'myVoyages', component: PrivateVoyagesComponent },
     ]),
     FormsModule,
   ],

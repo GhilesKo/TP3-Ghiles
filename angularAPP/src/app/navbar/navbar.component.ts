@@ -7,10 +7,12 @@ import { VoyageRequestService } from '../voyageRequest.service';
   styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent implements OnInit {
-  isSuccesful?: boolean;
   constructor(public service: VoyageRequestService) {}
 
-  ngOnInit() {
-    this.isSuccesful = this.service.isSuccesful;
+  ngOnInit() {}
+
+  Logout() {
+    localStorage.removeItem('token');
+    this.service.tokenstored = null;
   }
 }

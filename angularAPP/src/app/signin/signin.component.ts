@@ -11,7 +11,6 @@ import { VoyageRequestService } from '../voyageRequest.service';
 export class SigninComponent implements OnInit {
   username: string = '';
   password: string = '';
-  errMsg: string = '';
   isSuccesful: boolean = false;
   cpt: number = 0;
 
@@ -19,22 +18,7 @@ export class SigninComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  onSubmitUsername() {
-    console.log(this.username);
-    return this.username;
-  }
-  onSubmitPassword() {
-    console.log(this.password);
-    return this.password;
-  }
-  signInRequest() {
-    this.service.signInRequest(this.username, this.password);
-    this.serviceErrOrSucc();
-  }
-
-  serviceErrOrSucc() {
-    this.isSuccesful = this.service.isSuccesful;
-    this.errMsg = this.service.errMsg;
-    console.log(this.errMsg);
+  async signInRequest() {
+    await this.service.signInRequest(this.username, this.password);
   }
 }
