@@ -1,3 +1,40 @@
-<div></div>
+<div class="container ">
+  <div class="boiteCreation">
 
-<h1></h1>
+  <div class="text-center">
+    <i class="fa-solid fa-suitcase fa-3x mb-4 logoBox"></i>
+    <div class="form-group roww">
+      <label for="exampleInputEmail1">Pays : </label>
+      <input
+      [(ngModel)]="paysVoyage"
+        name="username"
+        class="form-control boitevalue mx-2"
+        placeholder="Pays"
+      />
+    </div>
+
+    <div class="form-check mt-2">
+      <input [(ngModel)]="isPublic"  class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+      <label class="form-check-label me-5 " for="flexCheckChecked">
+       Publique
+      </label>
+    </div>
+    <button (click)="test()"
+          type="button"
+          class="btn btn-sm btn-success btnAjouter signup mt-3"
+        > Ajouter </button>
+</div>
+
+  </div>
+  <div class="customTripBox">
+    <div *ngFor="let v of voyageUser" class="card" style="width: 18rem">
+      <h5 class="card-text bg-opacity-10 mx-2 my-1 cardheader text-center">
+        {{ v.pays }}
+      </h5>
+      <img class="card-img-top" src="{{ v.photo }}" alt="Card image" />
+      <div class="boiteCircle text-center fa-2x">
+        <a><i class="fa-solid fa-user-plus fa-1x bordericon"></i></a>
+      </div>
+    </div>
+  </div>
+</div>

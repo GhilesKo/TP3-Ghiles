@@ -20,12 +20,18 @@ export class VoyageRequestService implements OnInit {
   voyagesPublic: Voyage[] = [];
   voyagePrivate: Voyage[] = [];
 
+
   getPublicVoyages() {
     return this.http.get<any>('http://localhost:16029/api/Voyages/Public');
   }
 
   getCustomVoyage() {
-    return this.http.get<any>('http://localhost:16029/api/Voyages/Custom');
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Authorization': 'Bearer ' + this.tokenstored
+      })
+    };
+    return this.http.get<any>('http://localhost:16029/api/Voyages/Custom',httpOptions)
   }
 
   async signInRequest(username: string, password: string) {

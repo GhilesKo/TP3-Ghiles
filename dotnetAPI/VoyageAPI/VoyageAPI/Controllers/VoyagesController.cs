@@ -108,7 +108,7 @@ namespace VoyageAPI.Controllers
             var user = await _userManager.FindByIdAsync(userId);
 
             var voyage = _mapper.Map<Voyage>(voyageRequest);
-
+            
             voyage.Users.Add(user);
             voyage.UsersCount = voyage.Users.Count;
 
