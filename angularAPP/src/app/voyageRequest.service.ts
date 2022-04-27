@@ -52,4 +52,17 @@ export class VoyageRequestService implements OnInit {
         this.errMsg = err.error;
       });
   }
+
+
+  addVoyage(pays:string, Public:boolean){
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Authorization': 'Bearer ' + this.tokenstored
+      })
+    };
+    return this.http.post<any>("http://localhost:16029/api/Voyages",{pays,Public},httpOptions);
+  }
+
+
+
 }

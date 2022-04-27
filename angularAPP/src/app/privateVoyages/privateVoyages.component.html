@@ -19,7 +19,7 @@
        Publique
       </label>
     </div>
-    <button (click)="test()"
+    <button (click)="test();AjouterVoyage(); "
           type="button"
           class="btn btn-sm btn-success btnAjouter signup mt-3"
         > Ajouter </button>
@@ -33,7 +33,7 @@
       </h5>
       <img class="card-img-top" src="{{ v.photo }}" alt="Card image" />
       <div class="boiteCircle text-center fa-2x">
-        <a><i class="fa-solid fa-user-plus fa-1x bordericon"></i></a>
+        <i (click)="inviteUser()" class="fa-solid fa-user-plus fa-1x bordericon"></i>
       </div>
     </div>
   </div>

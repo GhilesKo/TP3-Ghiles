@@ -10,7 +10,7 @@ import { VoyageRequestService } from '../voyageRequest.service';
 export class PrivateVoyagesComponent implements OnInit {
 
   voyageUser:Voyage[]=[];
-  paysVoyage?:string;
+  paysVoyage:string="";
   isPublic:boolean=false;
   constructor(public service: VoyageRequestService) {}
 
@@ -32,8 +32,28 @@ export class PrivateVoyagesComponent implements OnInit {
   }
 
 
-  AjouterVoyage(){
+  AjouterVoyage(){this.service.addVoyage(this.paysVoyage,this.isPublic).subscribe(res=>{
 
+    console.log(res.pays);
+
+    var voyage = new Voyage(res.pays,res.photo);
+    this.voyageUser.push(voyage);
+
+
+  })
+
+
+
+  }
+  inviteUser(){
+
+    let text;
+    let person = prompt("Please enter the user e-mail :", "user@example.com");
+    if (person == null || person == "") {
+     alert("Please enter a valid e-mail")
+    } else {
+     //send request with email given
+    }
 
 
   }
@@ -41,8 +61,8 @@ export class PrivateVoyagesComponent implements OnInit {
   test(){
 
     console.log(this.paysVoyage);
-    if(this.isPublic===false){console.log("false");}
-    else console.log("true");
+    console.log(this.isPublic);
+
 
     }
 
