@@ -1,0 +1,23 @@
+.signupBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+}
+
+.signup {
+  background-color: white;
+  height: 280px;
+  width: 500px;
+  border-radius: 10px;
+}
+
+.roww {
+  display: flex;
+}
+
+input {
+  width: 50%;
+  margin: 0 auto;
+}

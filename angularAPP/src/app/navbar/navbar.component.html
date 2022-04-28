@@ -10,6 +10,8 @@
       <h4 class="site">J'mepromèneavecmesvalises.com</h4>
     </div>
 
+    <h5 *ngIf="service.tokenstored">Welcome {{ service.usernameLogged }}!</h5>
+
     <div class="boxLogin">
       <a *ngIf="!service.tokenstored" [routerLink]="['/signin']">
         <button
@@ -19,6 +21,14 @@
           Login
         </button>
       </a>
+      <button
+        [routerLink]="['/signup']"
+        *ngIf="!service.tokenstored"
+        type="button"
+        class="btn btn-sm btn-primary boxButtons signup mb-1 me-4"
+      >
+        Sign up
+      </button>
       <a *ngIf="service.tokenstored" [routerLink]="['/myVoyages']">
         <button
           type="button"

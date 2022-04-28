@@ -50,13 +50,20 @@ namespace VoyageAPI.Controllers
 
                 
             };
-            
+
+            if (true)
+            {
+
+            }
+
             var existingUser = await _userManager.FindByEmailAsync(user.Email);
 
             if (existingUser!=null)
             {
                 return BadRequest("E-mail already taken");
             }
+
+           
 
            var result = await _userManager.CreateAsync(user, userRequest.Password);
             if (!result.Succeeded)

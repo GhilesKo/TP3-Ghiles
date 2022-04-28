@@ -1,13 +1,13 @@
 <div class="container">
-  <div class="signInBox">
-    <div class="signin p-2">
-      <h4>Login</h4>
+  <div class="signupBox">
+    <div class="signup p-2">
+      <h4>Sign up</h4>
 
-      <form (submit)="signInRequest()">
+      <form>
         <div class="form-group">
           <label for="exampleInputEmail1">Email address</label>
           <input
-            [(ngModel)]="username"
+            [(ngModel)]="email"
             name="username"
             class="form-control"
             placeholder="Enter email"
@@ -22,8 +22,10 @@
             placeholder="Password"
           />
         </div>
-        <p class="text-danger" *ngIf="service.errMsg">{{ service.errMsg }}</p>
-        <button type="submit" class="btn btn-primary mt-2">Sign in</button>
+
+        <button (click)="register()" type="submit" class="btn btn-primary mt-2">
+          Sign up
+        </button>
       </form>
     </div>
   </div>
